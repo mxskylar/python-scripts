@@ -1,0 +1,9 @@
+services:
+  scripts:
+    build:
+      context: .
+      dockerfile: python.dockerfile
+    entrypoint: "python main.py"
+    volumes:
+      - "./output:/python-scripts/output:rw"
+      - "./input:/python-scripts/input:rw"

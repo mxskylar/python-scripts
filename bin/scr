@@ -1,0 +1,4 @@
+#!/bin/bash
+
+set -o xtrace
+docker-compose -f "$(dirname "$BASH_SOURCE")/../docker-compose.yaml" run scripts $@
