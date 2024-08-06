@@ -14,5 +14,5 @@ def main(args):
             federal_withholding = matches[27][0]
             state_withholding = matches[29][0]
             with open(OUTPUT_CSV, "a") as file:
-                file.write(f"\n{federal_withholding},{state_withholding}")
+                file.write(f"\n{federal_withholding}|{state_withholding}")
     print(f"✅ Exported paystub data to {OUTPUT_CSV}")
