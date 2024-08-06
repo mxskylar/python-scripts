@@ -1,4 +1,5 @@
 from argparse import ArgumentParser, FileType
+import os
 import export_paystubs_to_csv
 
 EXPORT_PAYSTUBS_TO_CSV="export_paystubs_to_csv"
@@ -13,4 +14,7 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     if args.command == EXPORT_PAYSTUBS_TO_CSV:
+        file_name, file_extension = os.path.splitext(args.paystubs.name)
+        if file_extension != ".pdf":
+            raise Exception("File passed to --paystubs must be a PDF")
         export_paystubs_to_csv.main(args)
